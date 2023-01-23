@@ -28,8 +28,8 @@ public class Inicio : ControllerBase
 		var data = JsonConvert.DeserializeObject<dynamic>(RequestData.ToString());
 		var jwt = configuration_value.GetSection("JWT").Get<Jwt>();
 
-		string user_request = data.user_request.toString();
-		string pass_request = data.pass_request.toString();
+		string user_request = data.user_request.ToString();
+		string pass_request = data.pass_request.ToString();
 
 		Usuario usuario = Usuario.TMP().Where(x => x.usuario == user_request && x.password == pass_request).FirstOrDefault();
 
